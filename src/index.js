@@ -1,12 +1,13 @@
 // https://github.com/frontend-collective/react-sortable-tree#data-helper-functions
 
-// import "antd/dist/antd.css";
-import "./index.css";
-// import { Upload, Button, Tooltip, Form } from "antd";
-
 import React, { Component } from "react";
 import { render } from "react-dom";
 import SortableTree from "react-sortable-tree";
+
+import { Button } from "antd";
+
+// import "antd/dist/antd.css";
+// import "./index.css";
 
 class App extends Component {
   constructor(props) {
@@ -45,6 +46,14 @@ class App extends Component {
   render() {
     return (
       <div style={{ height: 750 }}>
+        <Button
+          href=""
+          onClick={(e) => {
+            this.addNew(e);
+          }}
+        >
+          button
+        </Button>
         <SortableTree
           rowHeight={50}
           treeData={this.state.treeData}
@@ -53,14 +62,6 @@ class App extends Component {
             console.log(treeData);
           }}
         />
-        <a
-          href=""
-          onClick={(e) => {
-            this.addNew(e);
-          }}
-        >
-          button
-        </a>
       </div>
     );
   }
